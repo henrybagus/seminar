@@ -8,7 +8,10 @@ use yii\helpers\Html;
 <h1> Seminar : <?= Html::encode($event->nama) ?> </h1> 
 </center>
 
-<?= Html::a('Back', ['absensi/entry'], ['class' => 'btn btn-success']) ?>
+<?= Html::a('Back', ['backend/absensi/entry'], ['class' => 'btn btn-success']) ?>
+<!-- benerin export dolo -->
+<?= Html::a('Export', ['backend/absensi/export'], ['class' => 'btn btn-success']) ?> 
+
 </br>
 </br>
 <table class="table">
