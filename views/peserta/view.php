@@ -14,16 +14,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
-                'method' => 'post',
-            ],
-        ]) ?>
-    </p>
+
 
     <?= DetailView::widget([
         'model' => $model,
@@ -39,11 +30,22 @@ $this->params['breadcrumbs'][] = $this->title;
 		]);
 	?>
 	<?php
-		echo "<h1><b>Anda terdaftar di seminar-seminar berikut: </b></h1><ul>";
+		echo "<h3><b>Anda terdaftar di seminar-seminar berikut: </b></h3><ol>";
 		foreach($model->eventsData as $row){
-			echo"<li><h3>";
-			echo $row->nama."</h3></li>";
+			echo"<li>";
+			echo $row->nama."</li></br>";
 		}
 	?>
-
+	</ol></br>
+    <p>
+		Salah data? ingin berubah list seminar? klik button dibawah ini: </br>
+        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <!-- <?= Html::a('Delete', ['delete', 'id' => $model->id], [
+            'class' => 'btn btn-danger',
+            'data' => [
+                'confirm' => 'Are you sure you want to delete this item?',
+                'method' => 'post',
+            ],
+        ]) ?> -->
+    </p>
 </div>
