@@ -6,8 +6,9 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Peserta */
 
-$this->title = 'Create Peserta';
-$this->params['breadcrumbs'][] = ['label' => 'Peserta', 'url' => ['index']];
+
+$this->title = 'Daftar Peserta Seminar ';
+
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="peserta-create">
