@@ -28,7 +28,7 @@ use yii\helpers\Html;
 					<td> <?= $count=$count+1 ?></td>
 					<td> <?= $value->idPeserta->nama ?> </td>
 					<td> <?= $value->idPeserta->universitas ?> </td>
-					<td> <?= Html::a('Hadir', ['absensi/refresh','id'=>$value->id], ['class' => 'btn btn-success']) ?> </td>
+					<td> <?= Html::a('Hadir', ['backend/absensi/refresh','id'=>$value->id], ['class' => 'btn btn-success']) ?> </td>
 				</tr>
 	<?php
 			} else {
@@ -37,7 +37,7 @@ use yii\helpers\Html;
 					<td> <?= $count=$count+1 ?></td>
 					<td> <?= $value->idPeserta->nama ?> </td>
 					<td> <?= $value->idPeserta->universitas ?> </td>
-					<td> <?= Html::a('Hadir', ['absensi/refresh','id'=>$value->id], ['class' => 'btn btn-danger']) ?> </td>
+					<td> <?= Html::a('Hadir', ['backend/absensi/refresh','id'=>$value->id], ['class' => 'btn btn-danger']) ?> </td>
 				</tr>
 	<?php
 			}
