@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model app\models\Peserta */
 
 $this->title = $model->nama;
-$this->params['breadcrumbs'][] = ['label' => 'Peserta', 'url' => ['index']];
+
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="peserta-view">

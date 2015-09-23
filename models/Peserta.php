@@ -35,7 +35,7 @@ class Peserta extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nama', 'hp', 'email', 'universitas', 'jurusan', 'npm'], 'required'],
+            [['nama', 'hp', 'email', 'universitas', 'jurusan', 'npm','events'], 'required'],
             [['nama', 'jurusan'], 'string', 'max' => 50],
             [['hp'], 'string', 'max' => 12],
             [['email'], 'string', 'max' => 30],
