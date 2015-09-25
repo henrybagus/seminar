@@ -9,6 +9,8 @@ use yii\helpers\Html;
 </center>
 
 <?= Html::a('Back', ['backend/absensi/entry'], ['class' => 'btn btn-success']) ?>
+<!-- benerin export dolo -->
+<?= Html::a('Export', ['backend/absensi/export'], ['class' => 'btn btn-success']) ?> 
 </br>
 </br>
 <table class="table">

@@ -8,6 +8,8 @@ use app\models\Absensi;
 use app\models\AbsensiForm;
 use app\models\AbsensiSearch;
 use app\models\Event;
+use app\models\PesertaSearch;
+use arturoliveira\ExcelView;
 
 class AbsensiController extends Controller{
 	
@@ -149,6 +151,29 @@ class AbsensiController extends Controller{
             }      
         }
         return $this->redirect(Yii::$app->request->referrer);
+    }
+
+    public function actionExport()
+    {
+        // $searchModel1 = new AbsensiSearch();
+        $searchModel = new PesertaSearch();
+        // $dataProvider1 = $searchModel1->search(Yii::$app->request->queryParams);
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        // if ($dataProvider1->id_peserta == $dataProvider->id) {
+            ExcelView::widget([
+                'dataProvider' => $dataProvider,
+                'filterModel' => $searchModel,
+                'fullExportType' => 'xlsx',
+                'grid_mode' => 'export',
+                'columns' => [
+                    ['class' => 'yii\grid\serialColumn'],
+                    'id',
+                    'nama',
+                    'universitas',
+                    'jurusan',
+                ],
+            ]);
+        // }
     }
 }
 ?>

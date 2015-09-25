@@ -26,13 +26,9 @@ use yii\helpers\ArrayHelper;
     <?= $form->field($model, 'npm')->textInput(['maxlength' => 255]) ?>
 	
 	<div class="seminarlist">
-		<p>
+		</br>
 		<?php
-			echo "Seminar Yang Diminati:";
-		?>
-		</p>
-		<?php
-			echo $form->field($model, 'events')->checkboxList(ArrayHelper::map($model_event,"id","nama"));
+			echo $form->field($model, 'events')->checkboxList(ArrayHelper::map($model_event,"id","nama"),['separator'=>'</br></br>'])->label('<h3>Seminar yang anda minati:</h3></br></br>');
 		?>
 	</div>
 	<br><br>
