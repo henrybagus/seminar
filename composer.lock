@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ea2449c337b72297361705ae39d8947a",
+    "hash": ["ea2449c337b72297361705ae39d8947a"],
     "packages": [
         {
             "name": "arturoliveira/yii2-excelview",

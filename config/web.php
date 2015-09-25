@@ -25,7 +25,7 @@ $config = [
         ],
             'mailer' => [
             'class' => 'nickcv\mandrill\Mailer',
-            'apikey' => 'iUAwIgOl1Fr6uI1nWFa5dA',
+            'apikey' => 'VJQUxYVjdFIoMW6AryHRxg',
         ],
         // 'mailer' => [
         //     'class' => 'yii\swiftmailer\Mailer',

@@ -10,7 +10,7 @@ use yii\helpers\Html;
 
 <?= Html::a('Back', ['backend/absensi/entry'], ['class' => 'btn btn-success']) ?>
 <!-- benerin export dolo -->
-<?= Html::a('Export', ['backend/absensi/export'], ['class' => 'btn btn-success']) ?> 
+<?= Html::a('Export', ['backend/absensi/export', 'id_event' => $event->id], ['class' => 'btn btn-success']) ?> 
 </br>
 </br>
 <table class="table">

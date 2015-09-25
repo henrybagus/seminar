@@ -158,7 +158,7 @@ class AbsensiController extends Controller{
         // $searchModel1 = new AbsensiSearch();
         $searchModel = new PesertaSearch();
         // $dataProvider1 = $searchModel1->search(Yii::$app->request->queryParams);
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider = $searchModel->search(['id_event' => 2]);
         // if ($dataProvider1->id_peserta == $dataProvider->id) {
             ExcelView::widget([
                 'dataProvider' => $dataProvider,
