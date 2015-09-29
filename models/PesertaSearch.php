@@ -71,4 +71,23 @@ class PesertaSearch extends Peserta
 
         return $dataProvider;
     }
+
+    public function searchByEvent($id)
+    {
+        $query = Peserta::find();
+
+        // add conditions that should always apply here
+
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+        ]);
+
+        // grid filtering conditions
+        $query->innerJoin('absensi', 'absensi.id_peserta = peserta.id');
+        $query->andFilterWhere([
+            'id_event' => $id,
+        ]);
+
+        return $dataProvider;
+    }
 }

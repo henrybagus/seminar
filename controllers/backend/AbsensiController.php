@@ -10,6 +10,8 @@ use app\models\AbsensiSearch;
 use app\models\Event;
 use app\models\PesertaSearch;
 use arturoliveira\ExcelView;
+use yii\db\Query;
+use yii\data\ActiveDataProvider;
 
 class AbsensiController extends Controller{
 	
@@ -153,12 +155,34 @@ class AbsensiController extends Controller{
         return $this->redirect(Yii::$app->request->referrer);
     }
 
+
+    public function actionPrint(){
+        
+        $id = Yii::$app->request->get('id_event');
+        $event=Event::findOne($id);        
+        foreach($event->absensis as $absensi){
+                $temp =$absensi->idPeserta->nama;
+                
+                print_r($temp);
+                
+        }
+        
+    }
+
+
+
     public function actionExport()
-    {
+    { 
+
         // $searchModel1 = new AbsensiSearch();
         $searchModel = new PesertaSearch();
-        // $dataProvider1 = $searchModel1->search(Yii::$app->request->queryParams);
-        $dataProvider = $searchModel->search(['id_event' => 2]);
+        $id = Yii::$app->request->get('id_event');
+        // $query = new Query;
+        // $query = $query->from('absensi')->innerJoin('peserta','id_peserta = peserta.id', $id);
+
+        $dataProvider = $searchModel->searchByEvent($id);
+        // $dataProvider = new ActiveDataProvider(['query'=>$query]);
+        // $dataProvider = new ActiveDataProvider(['query' => Event::find()->where])
         // if ($dataProvider1->id_peserta == $dataProvider->id) {
             ExcelView::widget([
                 'dataProvider' => $dataProvider,
@@ -175,5 +199,9 @@ class AbsensiController extends Controller{
             ]);
         // }
     }
+
+
+
+
 }
 ?>

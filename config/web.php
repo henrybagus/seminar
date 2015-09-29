@@ -21,11 +21,11 @@ $config = [
             'enableAutoLogin' => true,
         ],
         'errorHandler' => [
-            'errorAction' => 'backend/site/error',
+            'errorAction' => 'site/error',
         ],
-            'mailer' => [
+        'mailer' => [
             'class' => 'nickcv\mandrill\Mailer',
-            'apikey' => 'VJQUxYVjdFIoMW6AryHRxg',
+            'apikey' => 'ptK4jxJjRPd6rx6kfLSFdA',
         ],
         // 'mailer' => [
         //     'class' => 'yii\swiftmailer\Mailer',
@@ -48,7 +48,7 @@ $config = [
             'enablePrettyUrl' => true,
 			'rules'=>[
 				'daftar' =>'peserta/create',
-				'admin' => 'backend/site/login'
+				'admin' => 'backend/absensi/entry'
 			],
 		],           
         'db' => require(__DIR__ . '/db.php'),
