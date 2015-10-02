@@ -70,7 +70,7 @@ class PesertaController extends Controller
             return $this->render('create', [
                 'model' => $model,
 				'model_event'=>$model_event,
-				
+
             ]);
         }
     }
@@ -92,7 +92,7 @@ class PesertaController extends Controller
             return $this->render('update', [
                 'model' => $model,
 				'model_event'=>$model_event,
-				
+
             ]);
         }
     }

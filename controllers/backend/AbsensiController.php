@@ -10,6 +10,8 @@ use app\models\AbsensiSearch;
 use app\models\Event;
 use app\models\PesertaSearch;
 use arturoliveira\ExcelView;
+use yii\db\Query;
+use yii\data\ActiveDataProvider;
 
 class AbsensiController extends Controller{
 	
@@ -125,8 +127,6 @@ class AbsensiController extends Controller{
         $data = Event::find()->all();
         if ($model->load(Yii::$app->request->get()) && $model->validate()) {
             $event=Event::findOne($model->id_event);
-            // print_r($event->absensis);
-            // exit();
             return $this->render('absensi-confirm', ['event' => $event]);
         } else {
             return $this->render('absensi', [
@@ -154,12 +154,13 @@ class AbsensiController extends Controller{
     }
 
     public function actionExport()
-    {
-        // $searchModel1 = new AbsensiSearch();
+    { 
         $searchModel = new PesertaSearch();
-        // $dataProvider1 = $searchModel1->search(Yii::$app->request->queryParams);
-        $dataProvider = $searchModel->search(['id_event' => 2]);
-        // if ($dataProvider1->id_peserta == $dataProvider->id) {
+        $id = Yii::$app->request->get('id_event');
+        // $query = new Query;
+        // $query = $query->from('absensi')->innerJoin('peserta','id_peserta = peserta.id', $id);
+
+        $dataProvider = $searchModel->searchByEvent($id);
             ExcelView::widget([
                 'dataProvider' => $dataProvider,
                 'filterModel' => $searchModel,
@@ -175,5 +176,9 @@ class AbsensiController extends Controller{
             ]);
         // }
     }
+
+
+
+
 }
 ?>

@@ -6,8 +6,8 @@ $params = require(__DIR__ . '/params.php');
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'], 
-    'defaultRoute'=>'/peserta/create',
+    'name' => 'Unpar Career Expo & Seminar ',
+    'bootstrap' => ['log'],
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
@@ -21,11 +21,11 @@ $config = [
             'enableAutoLogin' => true,
         ],
         'errorHandler' => [
-            'errorAction' => 'backend/site/error',
+            'errorAction' => 'site/error',
         ],
-            'mailer' => [
+        'mailer' => [
             'class' => 'nickcv\mandrill\Mailer',
-            'apikey' => 'VJQUxYVjdFIoMW6AryHRxg',
+            'apikey' => 'ptK4jxJjRPd6rx6kfLSFdA',
         ],
         // 'mailer' => [
         //     'class' => 'yii\swiftmailer\Mailer',
@@ -43,14 +43,14 @@ $config = [
                 ],
             ],
         ],
-        
+
         'urlManager' => [
             'enablePrettyUrl' => true,
 			'rules'=>[
 				'daftar' =>'peserta/create',
-				'admin' => 'backend/site/login'
+				'backend' => 'site/login'
 			],
-		],           
+		],
         'db' => require(__DIR__ . '/db.php'),
     ],
     'params' => $params,
