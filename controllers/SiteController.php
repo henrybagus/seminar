@@ -1,6 +1,6 @@
 <?php
 
-namespace app\controllers\backend;
+namespace app\controllers;
 
 use Yii;
 use yii\filters\AccessControl;
@@ -70,7 +70,7 @@ class SiteController extends Controller
     {
         Yii::$app->user->logout();
 
-        return $this->goHome();
+        return $this->redirect('login');
     }
 
 }

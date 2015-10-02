@@ -36,6 +36,11 @@ AppAsset::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
+        
+                ['label' => 'Absensi', 'url' => ['/backend/absensi']],
+                ['label' => 'Peserta', 'url' => ['/backend/peserta']],
+                ['label' => 'Event', 'url' => ['/backend/event']],
+
             Yii::$app->user->isGuest ?
                 ['label' => 'Login', 'url' => ['/site/login']] :
                 [
@@ -43,6 +48,9 @@ AppAsset::register($this);
                     'url' => ['/site/logout'],
                     'linkOptions' => ['data-method' => 'post']
                 ],
+                
+
+
         ],
     ]);
     NavBar::end();
