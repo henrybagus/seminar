@@ -4,7 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": ["ea2449c337b72297361705ae39d8947a"],
+    "hash": "db4ccd0d7a242e71b84703faeb3eebd0",
+    "content-hash": "752a1476ae578113acf633c9e0f00203",
     "packages": [
         {
             "name": "arturoliveira/yii2-excelview",
@@ -51,7 +52,7 @@
                 "xlsx",
                 "yii2"
             ],
-            "time": "2014-10-16 17:06:43"
+            "time": "2014-10-16 15:06:43"
         },
         {
             "name": "bower-asset/bootstrap",
@@ -260,7 +261,8 @@
             },
             "license": [
                 "MIT"
-            ]
+            ],
+            "time": "2015-03-08 21:03:11"
         },
         {
             "name": "cebe/markdown",
@@ -367,28 +369,6 @@
             "time": "2013-11-30 08:25:19"
         },
         {
-<<<<<<< HEAD
-            "name": "mandrill/mandrill",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://bitbucket.org/mailchimp/mandrill-api-php.git",
-                "reference": "9f336b08ea148c80db3b694f3dc737cd4f414e19"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/mailchimp/mandrill-api-php/get/9f336b08ea148c80db3b694f3dc737cd4f414e19.zip",
-                "reference": "9f336b08ea148c80db3b694f3dc737cd4f414e19",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.2.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Mandrill": "src/"
-=======
             "name": "kartik-v/yii2-export",
             "version": "dev-master",
             "source": {
@@ -410,48 +390,10 @@
             "autoload": {
                 "psr-4": {
                     "kartik\\export\\": ""
->>>>>>> origin/master
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-<<<<<<< HEAD
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Mandrill Devs",
-                    "email": "community@mandrill.com",
-                    "homepage": "http://mandrill.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "API client library for the Mandrill email as a service platform",
-            "homepage": "https://bitbucket.org/mailchimp/mandrill-api-php",
-            "keywords": [
-                "api",
-                "email"
-            ],
-            "time": "2014-10-16 21:08:20"
-        },
-        {
-            "name": "nickcv/yii2-mandrill",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/nickcv-ln/yii2-mandrill.git",
-                "reference": "7acea8c85e5bcb98251ca064931aa51186b1f258"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/nickcv-ln/yii2-mandrill/zipball/7acea8c85e5bcb98251ca064931aa51186b1f258",
-                "reference": "7acea8c85e5bcb98251ca064931aa51186b1f258",
-                "shasum": ""
-            },
-            "require": {
-                "mandrill/mandrill": "*",
-                "yiisoft/yii2": "*"
-=======
                 "BSD-3-Clause"
             ],
             "authors": [
@@ -482,16 +424,16 @@
         },
         {
             "name": "kartik-v/yii2-grid",
-            "version": "v3.0.6",
+            "version": "v3.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-grid.git",
-                "reference": "5e5229fd7ea30d65cdde15db073ea8cb1a39be68"
+                "reference": "913fde8fbe41bf998d53a88d0443e25e1e696194"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-grid/zipball/5e5229fd7ea30d65cdde15db073ea8cb1a39be68",
-                "reference": "5e5229fd7ea30d65cdde15db073ea8cb1a39be68",
+                "url": "https://api.github.com/repos/kartik-v/yii2-grid/zipball/913fde8fbe41bf998d53a88d0443e25e1e696194",
+                "reference": "913fde8fbe41bf998d53a88d0443e25e1e696194",
                 "shasum": ""
             },
             "require": {
@@ -522,7 +464,7 @@
                 "widget",
                 "yii2"
             ],
-            "time": "2015-07-14 19:20:52"
+            "time": "2015-09-12 19:41:22"
         },
         {
             "name": "kartik-v/yii2-krajee-base",
@@ -540,39 +482,15 @@
             },
             "require": {
                 "yiisoft/yii2-bootstrap": "@dev"
->>>>>>> origin/master
             },
             "type": "yii2-extension",
             "autoload": {
                 "psr-4": {
-<<<<<<< HEAD
-                    "nickcv\\mandrill\\": ""
-=======
                     "kartik\\base\\": ""
->>>>>>> origin/master
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-<<<<<<< HEAD
-                "GPL-3.0"
-            ],
-            "authors": [
-                {
-                    "name": "Nicola Puddu",
-                    "email": "n.puddu@outlook.com"
-                }
-            ],
-            "description": "Mandrill Api Integration for Yii2",
-            "keywords": [
-                "email",
-                "extension",
-                "mailer",
-                "mandrill",
-                "yii2"
-            ],
-            "time": "2015-08-21 11:04:18"
-=======
                 "BSD-3-Clause"
             ],
             "authors": [
@@ -593,6 +511,93 @@
                 "yii2"
             ],
             "time": "2015-06-16 05:19:57"
+        },
+        {
+            "name": "mandrill/mandrill",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://bitbucket.org/mailchimp/mandrill-api-php.git",
+                "reference": "da3adc10042eafac2e53de141b358a52b8e53596"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/mailchimp/mandrill-api-php/get/da3adc10042eafac2e53de141b358a52b8e53596.zip",
+                "reference": "da3adc10042eafac2e53de141b358a52b8e53596",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Mandrill": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Mandrill Devs",
+                    "email": "community@mandrill.com",
+                    "homepage": "http://mandrill.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "API client library for the Mandrill email as a service platform",
+            "homepage": "https://bitbucket.org/mailchimp/mandrill-api-php",
+            "keywords": [
+                "api",
+                "email"
+            ],
+            "time": "2015-09-22 11:58:03"
+        },
+        {
+            "name": "nickcv/yii2-mandrill",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nickcv-ln/yii2-mandrill.git",
+                "reference": "7acea8c85e5bcb98251ca064931aa51186b1f258"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nickcv-ln/yii2-mandrill/zipball/7acea8c85e5bcb98251ca064931aa51186b1f258",
+                "reference": "7acea8c85e5bcb98251ca064931aa51186b1f258",
+                "shasum": ""
+            },
+            "require": {
+                "mandrill/mandrill": "*",
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "nickcv\\mandrill\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Nicola Puddu",
+                    "email": "n.puddu@outlook.com"
+                }
+            ],
+            "description": "Mandrill Api Integration for Yii2",
+            "keywords": [
+                "email",
+                "extension",
+                "mailer",
+                "mandrill",
+                "yii2"
+            ],
+            "time": "2015-08-21 11:04:18"
         },
         {
             "name": "phpoffice/phpexcel",
@@ -650,7 +655,6 @@
                 "xlsx"
             ],
             "time": "2014-03-02 15:22:49"
->>>>>>> origin/master
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -711,12 +715,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "d3c831024b7d7dba941f3944c8d9bac42aea4856"
+                "reference": "c76e0f9840c6ca014eda2f7acffc1c70a053eef9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/d3c831024b7d7dba941f3944c8d9bac42aea4856",
-                "reference": "d3c831024b7d7dba941f3944c8d9bac42aea4856",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/c76e0f9840c6ca014eda2f7acffc1c70a053eef9",
+                "reference": "c76e0f9840c6ca014eda2f7acffc1c70a053eef9",
                 "shasum": ""
             },
             "require": {
@@ -792,7 +796,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2015-09-21 13:03:58"
+            "time": "2015-10-01 10:20:19"
         },
         {
             "name": "yiisoft/yii2-bootstrap",
@@ -800,12 +804,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-bootstrap.git",
-                "reference": "c25dc1e23d188954b546f6bd95def1027d91113b"
+                "reference": "49c2d45951dd2e98c6217aa071f655016c706846"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/c25dc1e23d188954b546f6bd95def1027d91113b",
-                "reference": "c25dc1e23d188954b546f6bd95def1027d91113b",
+                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/49c2d45951dd2e98c6217aa071f655016c706846",
+                "reference": "49c2d45951dd2e98c6217aa071f655016c706846",
                 "shasum": ""
             },
             "require": {
@@ -842,7 +846,7 @@
                 "bootstrap",
                 "yii2"
             ],
-            "time": "2015-09-17 13:11:22"
+            "time": "2015-09-29 10:36:47"
         },
         {
             "name": "yiisoft/yii2-composer",
@@ -850,12 +854,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-composer.git",
-                "reference": "6b2a2b3bb83d4b3dd791f76e64c48973ce01bac6"
+                "reference": "87cd1f2e0dd454a837607de612b1057840effe8b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-composer/zipball/6b2a2b3bb83d4b3dd791f76e64c48973ce01bac6",
-                "reference": "6b2a2b3bb83d4b3dd791f76e64c48973ce01bac6",
+                "url": "https://api.github.com/repos/yiisoft/yii2-composer/zipball/87cd1f2e0dd454a837607de612b1057840effe8b",
+                "reference": "87cd1f2e0dd454a837607de612b1057840effe8b",
                 "shasum": ""
             },
             "require": {
@@ -889,7 +893,7 @@
                 "extension installer",
                 "yii2"
             ],
-            "time": "2015-06-11 19:55:58"
+            "time": "2015-09-25 10:48:24"
         },
         {
             "name": "yiisoft/yii2-swiftmailer",
@@ -897,12 +901,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-swiftmailer.git",
-                "reference": "fffcd50b35c53888b40bb7cf9d52f25e1a4e2f43"
+                "reference": "745a045c905cc595ca5698f5cd78fd7a8944c706"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-swiftmailer/zipball/fffcd50b35c53888b40bb7cf9d52f25e1a4e2f43",
-                "reference": "fffcd50b35c53888b40bb7cf9d52f25e1a4e2f43",
+                "url": "https://api.github.com/repos/yiisoft/yii2-swiftmailer/zipball/745a045c905cc595ca5698f5cd78fd7a8944c706",
+                "reference": "745a045c905cc595ca5698f5cd78fd7a8944c706",
                 "shasum": ""
             },
             "require": {
@@ -939,7 +943,7 @@
                 "swiftmailer",
                 "yii2"
             ],
-            "time": "2015-06-18 08:31:25"
+            "time": "2015-09-29 11:01:52"
         }
     ],
     "packages-dev": [
@@ -976,12 +980,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "c8097f5f5db48aa32ae067b84aee4c0fc419b30c"
+                "reference": "f34c8c30513eb8ba5cd73021c567a0030a6cf547"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/c8097f5f5db48aa32ae067b84aee4c0fc419b30c",
-                "reference": "c8097f5f5db48aa32ae067b84aee4c0fc419b30c",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/f34c8c30513eb8ba5cd73021c567a0030a6cf547",
+                "reference": "f34c8c30513eb8ba5cd73021c567a0030a6cf547",
                 "shasum": ""
             },
             "require": {
@@ -1018,7 +1022,7 @@
                 "faker",
                 "fixtures"
             ],
-            "time": "2015-09-18 14:17:14"
+            "time": "2015-09-30 14:10:59"
         },
         {
             "name": "phpspec/php-diff",
@@ -1060,12 +1064,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-codeception.git",
-                "reference": "4428504253562c3de6643776d1bda273088bdeb4"
+                "reference": "d2c91b5a5dbde172f9adbbde10b0a523d1bfc388"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-codeception/zipball/4428504253562c3de6643776d1bda273088bdeb4",
-                "reference": "4428504253562c3de6643776d1bda273088bdeb4",
+                "url": "https://api.github.com/repos/yiisoft/yii2-codeception/zipball/d2c91b5a5dbde172f9adbbde10b0a523d1bfc388",
+                "reference": "d2c91b5a5dbde172f9adbbde10b0a523d1bfc388",
                 "shasum": ""
             },
             "require": {
@@ -1097,7 +1101,7 @@
                 "codeception",
                 "yii2"
             ],
-            "time": "2015-07-28 06:25:07"
+            "time": "2015-09-29 10:36:41"
         },
         {
             "name": "yiisoft/yii2-debug",
@@ -1105,12 +1109,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-debug.git",
-                "reference": "daf79cf6f6e32c474c9a476293d199cae64254fb"
+                "reference": "a8eba1bb9a7163df5120fb07c0c000e298a8bcf0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/daf79cf6f6e32c474c9a476293d199cae64254fb",
-                "reference": "daf79cf6f6e32c474c9a476293d199cae64254fb",
+                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/a8eba1bb9a7163df5120fb07c0c000e298a8bcf0",
+                "reference": "a8eba1bb9a7163df5120fb07c0c000e298a8bcf0",
                 "shasum": ""
             },
             "require": {
@@ -1144,7 +1148,7 @@
                 "debugger",
                 "yii2"
             ],
-            "time": "2015-09-06 19:58:00"
+            "time": "2015-09-29 10:36:38"
         },
         {
             "name": "yiisoft/yii2-faker",
@@ -1152,12 +1156,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-faker.git",
-                "reference": "091bc3c5db9e53031817c6e155c0bd518f3606de"
+                "reference": "6968c97fd2e951e8260d1ccc6f5e2109407290eb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-faker/zipball/091bc3c5db9e53031817c6e155c0bd518f3606de",
-                "reference": "091bc3c5db9e53031817c6e155c0bd518f3606de",
+                "url": "https://api.github.com/repos/yiisoft/yii2-faker/zipball/6968c97fd2e951e8260d1ccc6f5e2109407290eb",
+                "reference": "6968c97fd2e951e8260d1ccc6f5e2109407290eb",
                 "shasum": ""
             },
             "require": {
@@ -1191,7 +1195,7 @@
                 "faker",
                 "yii2"
             ],
-            "time": "2015-07-28 06:25:23"
+            "time": "2015-09-29 10:49:25"
         },
         {
             "name": "yiisoft/yii2-gii",
@@ -1199,12 +1203,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-gii.git",
-                "reference": "6519954dc8dd16050d886d1266d6248cbae2d14f"
+                "reference": "fbd134b1cbc06fa149cc546cc98b4e701ba08cb0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/6519954dc8dd16050d886d1266d6248cbae2d14f",
-                "reference": "6519954dc8dd16050d886d1266d6248cbae2d14f",
+                "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/fbd134b1cbc06fa149cc546cc98b4e701ba08cb0",
+                "reference": "fbd134b1cbc06fa149cc546cc98b4e701ba08cb0",
                 "shasum": ""
             },
             "require": {
@@ -1244,7 +1248,7 @@
                 "gii",
                 "yii2"
             ],
-            "time": "2015-08-31 23:04:33"
+            "time": "2015-09-29 10:49:23"
         }
     ],
     "aliases": [],
