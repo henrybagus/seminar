@@ -20,7 +20,8 @@
         "yiisoft/yii2-swiftmailer": "*",
 		"nickcv/yii2-mandrill": "*",
 		"kartik-v/yii2-export": "*",
-		"arturoliveira/yii2-excelview": "*"
+		"arturoliveira/yii2-excelview": "*", 
+		"nex/yii2-chosen" : "*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
