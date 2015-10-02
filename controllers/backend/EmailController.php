@@ -15,26 +15,20 @@ class EmailController extends Controller
 {
 	public function actionSend()
 	{ 
-   
-
         $email = new Email();
         if ($email->load(Yii::$app->request->post()) && $email->validate()) {
+            //mengambil event yang dipilih
             $event=Event::findOne($email->id_event);
+            //mengambil content dari email yang akan dikirimkan
             $content_template = $email->content;
+            //mengambil subjek dari email yang akan dikirimkan
             $subject_template = $email->subject;
-            // $event->absensis;
+        
             foreach($event->absensis as $absensi){
-                $temp =$absensi->idPeserta->email;
-                echo $temp;
-                 
-                // echo $absensi->idPeserta->email;
-                echo "</br>";
                 $subject = str_replace("{nama}", $absensi->idPeserta->nama, $subject_template);
-                echo $subject;
                 $content = str_replace("{nama}", $absensi->idPeserta->nama, $content_template);
-                echo $content;
-                echo "</br>";
-            
+                $content = str_replace("{nama_seminar}", $event->nama, $content);
+                $content = str_replace("{jadwal}", $event->jadwal, $content);
                 Yii::$app->mailer
                         ->compose()
                         ->setHtmlBody($content)
@@ -42,27 +36,18 @@ class EmailController extends Controller
                         ->setTo($absensi->idPeserta->email)
                         ->send();
             }
-            exit();
 
         }
-	}
-    
+	
+}    
 	
 		public function actionMail()
         {
             $email = new Email();
             $data = Event::find()->all();
-        // if ($model->load(Yii::$app->request->get()) && $email->validate()) {
-            // $event=Event::findOne($email->id_event);
             return $this->render('notif', ['data'=>$data,
 			'email' => $email,
             ]);
-        // } else {
-        //     return $this->render('notif-confirm', [
-        //     'model' => $email,
-        //     'data' => $data
-        //     ]);
-        // }
 
         }
 

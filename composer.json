@@ -19,7 +19,6 @@
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
 		"nickcv/yii2-mandrill": "*",
-		"kartik-v/yii2-export": "*",
 		"arturoliveira/yii2-excelview": "*"
     },
     "require-dev": {
