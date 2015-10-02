@@ -47,7 +47,7 @@ $config = [
         'urlManager' => [
             'enablePrettyUrl' => true,
 			'rules'=>[
-				'daftar' =>'peserta/create',
+				'daftar' =>'backend/peserta/create',
 				'backend' => 'site/login'
 			],
 		],

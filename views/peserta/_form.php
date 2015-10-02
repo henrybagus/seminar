@@ -26,7 +26,7 @@ $this->registerCss("input[type=checkbox]{
 <?php $form = ActiveForm::begin(); ?>
 	<div class="row">
 		<div class="form col-lg-5">
-			<?= Html::img('@web/assets/logoUCES.png');?>
+			<?= Html::img('http://cdc.unpar.ac.id/tiket/assets/img/logopembelianUCES.png');?>
 		</div>
 		<div class="form col-lg-4">
 			<?= $form->field($model, 'nama')->textInput(['maxlength' => 255]) ?>
