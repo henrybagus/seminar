@@ -6,7 +6,8 @@ $params = require(__DIR__ . '/params.php');
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'], 
+    'name' => 'Unpar Career Expo & Seminar ',
+    'bootstrap' => ['log'],
     'defaultRoute'=>'/peserta/create',
     'components' => [
         'request' => [
@@ -43,14 +44,14 @@ $config = [
                 ],
             ],
         ],
-        
+
         'urlManager' => [
             'enablePrettyUrl' => true,
 			'rules'=>[
 				'daftar' =>'peserta/create',
 				'admin' => 'backend/site/login'
 			],
-		],           
+		],
         'db' => require(__DIR__ . '/db.php'),
     ],
     'params' => $params,

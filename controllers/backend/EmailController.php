@@ -14,8 +14,8 @@ use app\models\AbsensiForm;
 class EmailController extends Controller
 {
 	public function actionSend()
-	{ 
-   
+	{
+
 
         $email = new Email();
         if ($email->load(Yii::$app->request->post()) && $email->validate()) {
@@ -26,7 +26,7 @@ class EmailController extends Controller
             foreach($event->absensis as $absensi){
                 $temp =$absensi->idPeserta->email;
                 echo $temp;
-                 
+
                 // echo $absensi->idPeserta->email;
                 echo "</br>";
                 $subject = str_replace("{nama}", $absensi->idPeserta->nama, $subject_template);
@@ -34,20 +34,21 @@ class EmailController extends Controller
                 $content = str_replace("{nama}", $absensi->idPeserta->nama, $content_template);
                 echo $content;
                 echo "</br>";
-            
+
                 Yii::$app->mailer
                         ->compose()
+						->setFrom(Yii::$app->params['adminEmail'])
                         ->setHtmlBody($content)
                         ->setSubject($subject)
-                        ->setTo($absensi->idPeserta->email)
+                        ->setTo($temp)
                         ->send();
             }
             exit();
 
         }
 	}
-    
-	
+
+
 		public function actionMail()
         {
             $email = new Email();
