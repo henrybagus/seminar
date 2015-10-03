@@ -40,9 +40,10 @@ AppAsset::register($this);
             ['label' => 'Absensi', 'url' => ['/backend/absensi/entry']],
             ['label' => 'Peserta', 'url' => ['/backend/peserta']],
             ['label' => 'Event', 'url' => ['/backend/event']],
-            ];
+            ['label' => 'Broadcast Email', 'url' => ['/backend/email/mail']],
+        ];
     }
-    
+
 
             if(Yii::$app->user->isGuest) {
                 $menu[] = ['label' => 'Login', 'url' => ['/site/login']] ;
@@ -53,7 +54,7 @@ AppAsset::register($this);
                     'linkOptions' => ['data-method' => 'post']
                 ];
             }
-            echo Nav::widget([      
+            echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => $menu,
             ]);
@@ -70,9 +71,7 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
-
-        <p class="pull-right"><?= Yii::powered() ?></p>
+        <p class="pull-left">&copy; Unpar Career Expo <?= date('Y') ?></p>
     </div>
 </footer>
 

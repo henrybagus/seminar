@@ -13,6 +13,20 @@ use app\models\AbsensiForm;
 
 class EmailController extends Controller
 {
+	public function behaviors(){
+		return [
+			'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+		];
+	}
+
 	public function actionSend()
 	{
         $email = new Email();
@@ -31,9 +45,13 @@ class EmailController extends Controller
                 // echo $absensi->idPeserta->email;
                 echo "</br>";
                 $subject = str_replace("{nama}", $absensi->idPeserta->nama, $subject_template);
+                $subject = str_replace("{nama_seminar}", $event->nama, $subject);
+                $subject = str_replace("{jadwal}", $event->jadwal, $subject);
+
                 $content = str_replace("{nama}", $absensi->idPeserta->nama, $content_template);
                 $content = str_replace("{nama_seminar}", $event->nama, $content);
                 $content = str_replace("{jadwal}", $event->jadwal, $content);
+
                 Yii::$app->mailer
                         ->compose()
 						->setFrom(Yii::$app->params['adminEmail'])

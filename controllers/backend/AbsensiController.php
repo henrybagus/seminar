@@ -12,9 +12,10 @@ use app\models\PesertaSearch;
 use arturoliveira\ExcelView;
 use yii\db\Query;
 use yii\data\ActiveDataProvider;
+use yii\filters\AccessControl;
 
 class AbsensiController extends Controller{
-	
+
 	public function behaviors()
     {
         return [
@@ -22,6 +23,15 @@ class AbsensiController extends Controller{
                 'class' => VerbFilter:: className(),
                 'actions' => [
                     'delete' => ['post'],
+                ],
+            ],
+			'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
                 ],
             ],
         ];
@@ -135,7 +145,7 @@ class AbsensiController extends Controller{
             ]);
         }
     }
-	
+
 	//function setelah mengklik kehadiran
     public function actionRefresh()
     {
@@ -143,18 +153,32 @@ class AbsensiController extends Controller{
         $model = Absensi::findOne($id);
         if ($model!=null) {
             if ($model->kehadiran == 1) {
-                $model->kehadiran = 0; 
+                $model->kehadiran = 0;
                 $model->save();
             } else {
-                $model->kehadiran = 1; 
+				//hadir
+				$subject = "Terima Kasih Telah Hadir di Seminar Unpar Career Expo";
+	            $content = "Dear {$model->idPeserta->nama}, <br>
+	            Terima kasih telah hadir di seminar <b>{$model->idEvent->nama}</b>.<br>
+				Mudah-mudahan dapat bermanfaat untuk Anda.<br>
+				Jika ada masukan untuk seminarnya jangan ragu untuk mengirimkannya ke email career.expo@unpar.ac.id<br><br>
+	            Best regards,<br>Panitia Unpar Career Expo & Seminar";
+                $model->kehadiran = 1;
                 $model->save();
-            }      
+				Yii::$app->mailer
+	                ->compose()
+	                ->setFrom(Yii::$app->params['adminEmail'])
+	                ->setHtmlBody($content)
+	                ->setSubject($subject)
+	                ->setTo($model->idPeserta->email)
+	                ->send();
+            }
         }
         return $this->redirect(Yii::$app->request->referrer);
     }
 
     public function actionExport()
-    { 
+    {
         $searchModel = new PesertaSearch();
         $id = Yii::$app->request->get('id_event');
         // $query = new Query;

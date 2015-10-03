@@ -37,7 +37,7 @@ class SiteController extends Controller
             ],
         ];
     }
-	
+
     public function actions()
     {
         return [
@@ -54,7 +54,7 @@ class SiteController extends Controller
     public function actionLogin()
     {
         if (!\Yii::$app->user->isGuest) {
-            return $this->redirect(['absensi/absensi/entry']);
+            return $this->redirect(['backend/absensi/entry']);
         }
 
         $model = new LoginForm();

@@ -7,7 +7,6 @@ use app\models\Peserta;
 use app\models\PesertaSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
 use app\models\Event;
 
 /**
@@ -18,40 +17,7 @@ class PesertaController extends Controller
     public function behaviors()
     {
         return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['post'],
-                ],
-            ],
         ];
-    }
-
-    /**
-     * Lists all Peserta models.
-     * @return mixed
-     */
-    public function actionIndex()
-    {
-        $searchModel = new PesertaSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
-    }
-
-    /**
-     * Displays a single Peserta model.
-     * @param integer $id
-     * @return mixed
-     */
-    public function actionView($id)
-    {
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-        ]);
     }
 
     /**
@@ -63,51 +29,50 @@ class PesertaController extends Controller
     {
         $model = new Peserta();
 
+        $this->layout = 'frontend.php';
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            $subject = "Pendaftaran Seminar di Unpar Career Expo";
+            $content = "Dear {$model->nama}, <br>
+            Terima kasih telah mendaftar di seminar Unpar Career Expo November 2015. <br>
+            Berikut adalah daftar seminar yang Anda ikuti:<br><br>
+            <ul>
+            ";
+
+            foreach($model->eventsData as $event){
+                $content .= "<li><span class='event-detail'><b>{$event->nama}</b><br>{$event->deskripsi}<br><small>{$event->jadwal}</small></span><br><br></li>";
+            }
+
+            $content .= "</ul><br><br>
+            <b>Lokasi Seminar: </b><br>
+            Universitas Katolik Parahyangan <br>
+            Jl. Ciumbuleuit No. 94 <br>
+            Bandung - 40141 <br>
+            Gedung Rektorat <br>
+            Ruang Operation Room <br><br>
+            Sampai jumpat di acara seminarnya. Jika memerlukan bantuan silakan hubungi kami di:<br>
+            +62-22-2032655 ext. 100120 / 100126 <br>
+            Dian - 0857 4105 3212<br><br>
+            Best regards,<br>Panitia Unpar Career Expo & Seminar";
+
+            Yii::$app->mailer
+                ->compose()
+                ->setFrom(Yii::$app->params['adminEmail'])
+                ->setHtmlBody($content)
+                ->setSubject($subject)
+                ->setTo($model->email)
+                ->send();
+
+            Yii::$app->session->setFlash('success', 'Pendaftaran berhasil, silakan cek email Anda. Terima kasih.');
+            return $this->refresh();
         } else {
 			$model_event= Event::find()->all();
+
             return $this->render('create', [
                 'model' => $model,
 				'model_event'=>$model_event,
-
             ]);
         }
-    }
-
-    /**
-     * Updates an existing Peserta model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
-     * @return mixed
-     */
-    public function actionUpdate($id)
-    {
-        $model = $this->findModel($id);
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-			$model_event= Event::find()->all();
-            return $this->render('update', [
-                'model' => $model,
-				'model_event'=>$model_event,
-
-            ]);
-        }
-    }
-
-    /**
-     * Deletes an existing Peserta model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
-     * @return mixed
-     */
-    public function actionDelete($id)
-    {
-        $this->findModel($id)->delete();
-
-        return $this->redirect(['index']);
     }
 
     /**

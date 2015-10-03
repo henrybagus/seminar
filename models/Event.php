@@ -33,7 +33,7 @@ class Event extends \yii\db\ActiveRecord
             [['nama', 'jadwal', 'deskripsi'], 'required'],
             [['jadwal'], 'safe'],
             [['deskripsi'], 'string'],
-            [['nama'], 'string', 'max' => 30],
+            [['nama'], 'string', 'max' => 100],
         ];
     }
 

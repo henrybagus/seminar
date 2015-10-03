@@ -35,11 +35,11 @@ class Peserta extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nama', 'hp', 'email', 'universitas', 'jurusan', 'npm','events'], 'required'],
+            [['nama', 'hp', 'email', 'universitas', 'jurusan','events'], 'required'],
             [['nama', 'jurusan'], 'string', 'max' => 50],
             [['hp'], 'string', 'max' => 12],
             [['email'], 'string', 'max' => 30],
-            [['universitas'], 'string', 'max' => 1000],
+            [['universitas'], 'string', 'max' => 150],
             [['npm'], 'string', 'max' => 11],
             [['email'], 'unique'],
         ];
@@ -53,11 +53,11 @@ class Peserta extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'nama' => 'Nama',
-            'hp' => 'Hp',
+            'hp' => 'Handphone',
             'email' => 'Email',
             'universitas' => 'Universitas',
             'jurusan' => 'Jurusan',
-            'npm' => 'Npm',
+            'npm' => 'NPM',
         ];
     }
 
@@ -68,11 +68,11 @@ class Peserta extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Absensi::className(), ['id_peserta' => 'id']);
     }
-	
+
 	public function getEventsData(){
 		return $this->hasMany(Event::className(),['id'=>'id_event'])->via('absensis');
 	}
-	
+
 	public function afterSave($insert,$changedAttributes){
 		$absensi=Absensi::deleteAll(['id_peserta'=>$this->id]);
 		foreach($this->events as $id_event){
