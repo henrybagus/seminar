@@ -69,8 +69,13 @@ $this->registerJs($js);
 				<?php
 					$list_event=[];
 					foreach($model_event as $event){
-						$list_event[$event->id] = "<span class='event-detail'><b>{$event->nama}</b><br>{$event->deskripsi}<br><small>{$event->jadwal}</small></span>";
+						if ($event->status == 1) {
+
+							$list_event[$event->id] = "<span class='event-detail'><b>{$event->nama}</b><br>{$event->deskripsi}<br><small>{$event->jadwal}</small></span>";
+						}
+
 					}
+
 					echo $form->field($model, 'events')->checkboxList($list_event,[
 						'separator'=>'</br></br>',
 						'encode' => false,

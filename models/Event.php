@@ -30,10 +30,11 @@ class Event extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nama', 'jadwal', 'deskripsi'], 'required'],
+            [['nama', 'jadwal', 'deskripsi', 'status'], 'required'],
             [['jadwal'], 'safe'],
             [['deskripsi'], 'string'],
             [['nama'], 'string', 'max' => 100],
+            [['status'], 'integer'],
         ];
     }
 
@@ -47,6 +48,7 @@ class Event extends \yii\db\ActiveRecord
             'nama' => 'Nama',
             'jadwal' => 'Jadwal',
             'deskripsi' => 'Deskripsi',
+            'status' => 'Status',
         ];
     }
 
