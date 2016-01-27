@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+// use yii\jui\DatePicker;
+
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Event */
@@ -17,6 +19,8 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'jadwal')->textInput() ?>
 
     <?= $form->field($model, 'deskripsi')->textarea(['rows' => 6]) ?>
+
+    <?= $form->field($model, 'img')->textInput() ?>
 
     <?= $form->field($model, 'status')->dropDownList(['0' => 'Tidak Aktif', '1' => 'Aktif']) ?>
 

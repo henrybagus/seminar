@@ -5,7 +5,7 @@ use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Peserta */
-$this->title = 'Daftar Seminar ';
+$this->title = 'Pendaftaran Companies Go to UNPAR ';
 
 $this->registerCss(".title{
 	text-align: center;

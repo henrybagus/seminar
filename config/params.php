@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'adminEmail' => 'career.expo@unpar.ac.id',
+    'adminEmail' => 'cdc@unpar.ac.id',
     'universitas' => [
         "Universitas Katolik Parahyangan / UNPAR" => "Universitas Katolik Parahyangan / UNPAR",
         "Institut Manajemen Telkom" => "Institut Manajemen Telkom",

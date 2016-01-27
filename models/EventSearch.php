@@ -19,7 +19,7 @@ class EventSearch extends Event
     {
         return [
             [['id'], 'integer'],
-            [['nama', 'jadwal', 'deskripsi'], 'safe'],
+            [['nama', 'jadwal', 'deskripsi','img'], 'safe'],
         ];
     }
 

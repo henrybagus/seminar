@@ -35,6 +35,8 @@ class Event extends \yii\db\ActiveRecord
             [['deskripsi'], 'string'],
             [['nama'], 'string', 'max' => 100],
             [['status'], 'integer'],
+			[['img'], 'string'],
+			
         ];
     }
 
@@ -48,6 +50,7 @@ class Event extends \yii\db\ActiveRecord
             'nama' => 'Nama',
             'jadwal' => 'Jadwal',
             'deskripsi' => 'Deskripsi',
+			'img' =>'Image',
             'status' => 'Status',
         ];
     }

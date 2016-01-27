@@ -41,7 +41,7 @@ class Peserta extends \yii\db\ActiveRecord
             [['email'], 'string', 'max' => 30],
             [['universitas'], 'string', 'max' => 150],
             [['npm'], 'string', 'max' => 11],
-            [['email'], 'unique'],
+            
         ];
     }
 

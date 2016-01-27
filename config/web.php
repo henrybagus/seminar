@@ -6,9 +6,9 @@ $params = require(__DIR__ . '/params.php');
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
-    'name' => 'Unpar Career Expo & Seminar ',
+    'name' => 'Companies Goes to UNPAR ',
     'bootstrap' => ['log'],
-    'defaultRoute' => 'peserta/create',
+    'defaultRoute' => 'peserta/home',
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
@@ -49,7 +49,8 @@ $config = [
             'enablePrettyUrl' => true,
 			'rules'=>[
 				'daftar' =>'backend/peserta/create',
-				'backend' => 'site/login'
+				'backend' => 'site/login',
+                'home' =>'backend/peserta/home'
 			],
 		],
         'db' => require(__DIR__ . '/db.php'),

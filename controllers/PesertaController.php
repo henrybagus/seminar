@@ -20,6 +20,16 @@ class PesertaController extends Controller
         ];
     }
 
+    public function actionHome(){
+        $model_event= Event::find()->all();
+        $this->layout = 'frontend.php';
+    
+        return $this->render('home', [
+            'model_event'=>$model_event,
+        ]);
+    }
+
+
     /**
      * Creates a new Peserta model.
      * If creation is successful, the browser will be redirected to the 'view' page.
@@ -63,8 +73,8 @@ class PesertaController extends Controller
                 ->setTo($model->email)
                 ->send();
 
-            Yii::$app->session->setFlash('success', 'Pendaftaran berhasil, silakan cek email Anda. Terima kasih.');
-            return $this->refresh();
+             Yii::$app->session->setFlash('success', 'Pendaftaran berhasil! Terima kasih.');
+             return $this->refresh();
         } else {
 			$model_event= Event::find()->all();
 

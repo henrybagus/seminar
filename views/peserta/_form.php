@@ -44,23 +44,25 @@ $this->registerJs($js);
 <?php $form = ActiveForm::begin(); ?>
 	<div class="row">
 		<div class="form col-lg-4">
-			<?= Html::img('http://cdc.unpar.ac.id/tiket/assets/img/logopembelianUCES.png', ['width' => '100%']);?>
+			<?= Html::img('http://unpar.ac.id/wp-content/uploads/2015/11/Logo-Website-Unpar.png');?>
 
+	
 			<div style="text-align:center">
-				<h3>Lokasi Seminar: </h3>
+				<h3>Lokasi Kegiatan: </h3>
 				<p>
+					<b>Operation Room (Ruang 0401)</b><br>
+					Gedung Rektorat Lantai 4<br>
 					Universitas Katolik Parahyangan <br>
 					Jl. Ciumbuleuit No. 94 <br>
 					Bandung - 40141 <br>
-					Gedung Rektorat <br>
-					Ruang Operation Room <br>
+					
 				</p>
 
 				<h3>Kontak: </h3>
 				<p>
-					career.expo@unpar.ac.id<br>
-					+62-22-2032655 ext. 100120 / 100126 <br>
-					Dian - 0857 4105 3212
+					cdc@unpar.ac.id<br>
+					+62-22-2032655 <br>
+					ext. 100120 / 100445 <br>
 				</p>
 			</div>
 		</div>
@@ -79,7 +81,7 @@ $this->registerJs($js);
 					echo $form->field($model, 'events')->checkboxList($list_event,[
 						'separator'=>'</br></br>',
 						'encode' => false,
-					])->label('<h3>Pilih Seminar yang Diikuti</h3>');
+					])->label('<h3>Pilih Perusahaan</h3>');
 				?>
 			</div>
 		</div>

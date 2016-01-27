@@ -9,6 +9,7 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\Event;
 use app\models\Email;
+use app\models\Peserta;
 use app\models\AbsensiForm;
 
 class EmailController extends Controller
@@ -27,8 +28,75 @@ class EmailController extends Controller
 		];
 	}
 
+	public function actionBroadcast(){
+        $peserta = Peserta::find()->all();
+		foreach($peserta as $key){
+            $temp = $key->email;
+            echo $temp;
+        }
+	}
+	
+	public function actionSend2(){
+		 //broadcast semua
+        $email = new Email();
+       if ($email->load(Yii::$app->request->post()) && $email->validate()) {
+        $peserta = Peserta::find()->all();
+        foreach($peserta as $key){
+            $temp = $key->email;
+			echo $temp;
+            $content_template = $email->content;
+            //mengambil subjek dari email yang akan dikirimkan
+            $subject_template = $email->subject;
+
+            $subject = str_replace("{nama}", $key->nama, $subject_template);
+                
+            $content = str_replace("{nama}", $key->nama, $content_template);
+                
+            echo "</br>";
+            Yii::$app->mailer
+                     ->compose()
+                     ->setFrom(Yii::$app->params['adminEmail'])
+                     ->setHtmlBody($content)
+                     ->setSubject($subject)
+                     ->setTo($temp)
+                     ->send();
+            }
+        }
+        
+		
+	}
+	
 	public function actionSend()
 	{
+
+   //      //broadcast semua
+   //      $email = new Email();
+   //     if ($email->load(Yii::$app->request->post()) && $email->validate()) {
+   //      $peserta = Peserta::find()->all();
+   //      foreach($peserta as $key){
+   //          $temp = $key->email;
+			// echo $temp;
+   //          $content_template = $email->content;
+   //          //mengambil subjek dari email yang akan dikirimkan
+   //          $subject_template = $email->subject;
+
+   //          $subject = str_replace("{nama}", $key->nama, $subject_template);
+                
+   //          $content = str_replace("{nama}", $key->nama, $content_template);
+                
+   //          echo "</br>";
+   //          Yii::$app->mailer
+   //                   ->compose()
+   //                   ->setFrom(Yii::$app->params['adminEmail'])
+   //                   ->setHtmlBody($content)
+   //                   ->setSubject($subject)
+   //                   ->setTo($temp)
+   //                   ->send();
+   //          }
+   //      }
+        
+
+        //send per event
         $email = new Email();
         if ($email->load(Yii::$app->request->post()) && $email->validate()) {
             //mengambil event yang dipilih
@@ -68,8 +136,8 @@ class EmailController extends Controller
     {
         $email = new Email();
         $data = Event::find()->all();
-        return $this->render('notif', ['data'=>$data,
-		'email' => $email,
+        return $this->render('notif', ['data'=>$data,	
+                                      'email' => $email,
         ]);
 
     }

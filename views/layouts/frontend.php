@@ -34,17 +34,15 @@ AppAsset::register($this);
       </button>
       <table>
         <tbody><tr>
-          <td>&nbsp;<img src="http://cdc.unpar.ac.id/tiket/assets/img/logo-unpar.png" height="50" width="50"></td>
-          <td><a href="http://cdc.unpar.ac.id/career-expo" class="navbar-brand">UCES UNPAR</a></td>
+          <td>&nbsp;<img src="http://unpar.ac.id/wp-content/uploads/2015/11/Logo-Website-Unpar.png" height="50" width="150"></td>
+          <!-- <td><a href="http://cdc.unpar.ac.id/company" class="navbar-brand">Company Goes To Campus</a></td> -->
         </tr>
     </tbody></table>
    </div>
    <div class="collapse navbar-collapse" id="example-navbar-collapse">
       <ul class="nav navbar-nav">
-        <li><a href="http://cdc.unpar.ac.id/tiket/pembelian/create">Pembelian Tiket</a></li>
-        <li><a href="http://cdc.unpar.ac.id/tiket/pembelian/kirimulang">Kirim Ulang Tiket</a></li>
-        <li><a href="http://cdc.unpar.ac.id/tiket/pembelian/information">Informasi</a></li>
-        <li class='active'><a href="http://cdc.unpar.ac.id/career-expo/seminar">Daftar Seminar</a></li>
+        <li><a href="">Home</a></li>
+        <li class='active'><a href="">Daftar Seminar</a></li>
       </ul>
    </div>
 </nav>
